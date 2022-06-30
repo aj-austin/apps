@@ -56,6 +56,9 @@ run-udp-pktgen:
 run-udp-relay:
 	timeout $(TIMEOUT) $(CARGO) run $(BUILD) $(CARGO_FLAGS) --features=$(LIBOS)-libos --features=$(DRIVER) --bin udp-relay -- --local $(LOCAL) --remote $(REMOTE)
 
+run-kv-store:
+	timeout $(TIMEOUT) $(CARGO) run $(BUILD) $(CARGO_FLAGS) --features=$(LIBOS)-libos --features=$(DRIVER) --bin kv-store -- --local $(LOCAL) --remtote $(REMOTE)
+
 clean:
 	rm -rf target && \
 	$(CARGO) clean && \
